@@ -25,19 +25,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     private static final Logger logger = LogManager.getLogger(WebConfig.class);
 
 
-    @SuppressWarnings("SpringJavaAutowiringInspection")
-
-    @Value("${spring.thymeleaf.templates_root:}")
-    private String templatesRoot;
-
-
-
     @Bean(name = "passwordEncoder")
     public PasswordEncoder getPasswordEncoder() {
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         return encoder;
     }
-
 
 
     @Override
@@ -69,6 +61,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     /**
      * Fix bean cookie
+     * xử lý cookie trc khi trả về
      * @return
      */
     @Bean
@@ -80,6 +73,5 @@ public class WebConfig extends WebMvcConfigurerAdapter {
             }
         };
     }
-
 
 }

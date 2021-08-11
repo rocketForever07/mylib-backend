@@ -1,28 +1,28 @@
-package application.data.model;
+package application.model.dto;
 
-
-import javax.persistence.*;
+import javax.persistence.Column;
 import java.util.Date;
 
-@Entity(name = "tbl_author")
-public class Author {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+public class AuthorDTO {
+
     private int id;
 
-    @Column(name = "full_name")
     private String fullName;
 
-    @Column(name = "nickname")
     private String nickName;
 
-    @Column(name = "DoB")
     private Date DoB;
 
-    @Column(name = "short_desc")
-    private String shortDesc;
+    public AuthorDTO() {
+    }
+
+    public AuthorDTO(int id, String fullName, String nickName, Date doB) {
+        this.id = id;
+        this.fullName = fullName;
+        this.nickName = nickName;
+        DoB = doB;
+    }
 
     public int getId() {
         return id;
@@ -54,13 +54,5 @@ public class Author {
 
     public void setDoB(Date doB) {
         DoB = doB;
-    }
-
-    public String getShortDesc() {
-        return shortDesc;
-    }
-
-    public void setShortDesc(String shortDesc) {
-        this.shortDesc = shortDesc;
     }
 }

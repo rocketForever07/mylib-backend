@@ -14,13 +14,34 @@ public class Category {
     private int id;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-    private List<Product> listProducts = new ArrayList<>();
+    private List<BookCategory> bookCategoryList = new ArrayList<>();
 
     @Column(name="name")
     private String name;
 
-    @Column(name = "short_desc")
-    private String shortDesc;
+    public List<BookCategory> getBookCategoryList() {
+        return bookCategoryList;
+    }
+
+    public void setBookCategoryList(List<BookCategory> bookCategoryList) {
+        this.bookCategoryList = bookCategoryList;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
 
     @Column(name = "created_date")
     private Date createdDate;

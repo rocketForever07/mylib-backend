@@ -10,12 +10,6 @@ public class CategoryDTO {
     private int id;
     private String name;
 
-    @JsonProperty("short_desc")
-    private String shortDesc;
-
-    @JsonSerialize(using = CustomDateSerializer.class)
-    private Date createdDate;
-
     public int getId() {
         return id;
     }
@@ -32,19 +26,4 @@ public class CategoryDTO {
         this.name = name;
     }
 
-    public String getShortDesc() {
-        return shortDesc;
-    }
-
-    public void setShortDesc(String shortDesc) {
-        this.shortDesc = shortDesc;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
 }

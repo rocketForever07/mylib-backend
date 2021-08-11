@@ -3,7 +3,7 @@ package application.data.model;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "dbo_user")
+@Entity(name = "tbl_user")
 public class User {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,7 +36,7 @@ public class User {
     private String phoneNumber;
 
     @Column(name = "created_date")
-    private Date creadedDate;
+    private Date createdDate;
 
     @Transient
     private String password;
@@ -106,12 +106,12 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public Date getCreadedDate() {
-        return creadedDate;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreadedDate(Date creadedDate) {
-        this.creadedDate = creadedDate;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     public String getPassword() {

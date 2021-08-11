@@ -11,12 +11,7 @@ import java.util.List;
 
 public interface CategoryRepository extends JpaRepository<Category,Integer> {
 
-    @Query("select count(c.id) from dbo_category c")
-    long getTotalCategories();
 
-    @Query("SELECT c FROM dbo_category c " +
-            "WHERE (:categoryName IS NULL OR UPPER(c.name) LIKE CONCAT('%',UPPER(:categoryName),'%'))")
-    Page<Category> getListCategoryByCategoryNameContaining(Pageable pageable, @Param("categoryName") String categoryName);
 
 
 }

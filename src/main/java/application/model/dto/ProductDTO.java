@@ -18,6 +18,7 @@ public class ProductDTO {
     private String mainImage;
     private Double price;
 
+
     @JsonSerialize(using = CustomDateSerializer.class)
     @JsonDeserialize(using = CustomDateDeserializer.class)
     private Date createdDate;
